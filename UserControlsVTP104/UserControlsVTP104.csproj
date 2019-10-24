@@ -67,10 +67,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UserControls\CalendarUserControl.ascx" />
+    <Content Include="images\Calendar-Icon.png" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="AddingUserControlVTP105.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserControls\CalendarUserControl.ascx.cs">
+      <DependentUpon>CalendarUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CalendarUserControl.ascx.designer.cs">
+      <DependentUpon>CalendarUserControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddingUserControlVTP105.aspx.cs">
+      <DependentUpon>AddingUserControlVTP105.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddingUserControlVTP105.aspx.designer.cs">
+      <DependentUpon>AddingUserControlVTP105.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -81,6 +106,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
