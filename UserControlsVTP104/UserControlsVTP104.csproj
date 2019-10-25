@@ -74,6 +74,7 @@
     <Content Include="AddingUserControlVTP105.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomEventVTP106.cs" />
     <Compile Include="UserControls\CalendarUserControl.ascx.cs">
       <DependentUpon>CalendarUserControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
