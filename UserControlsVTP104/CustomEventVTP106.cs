@@ -11,18 +11,18 @@ namespace UserControlsVTP104
         //CalenderVisibilityChangedEventArgs is a class that contains the event data
         //Here the data holds a boolean
         
-        private bool _isCalendarVisible;
+        private bool isCalendarVisible;
 
-        public CalendarVisibilityChangedEventArgs(bool isCalendarVisible)
+        public CalendarVisibilityChangedEventArgs(bool _isCalendarVisible)
         {
-            this._isCalendarVisible = isCalendarVisible;
+            this.isCalendarVisible = _isCalendarVisible;
         }
 
-        public bool isCalendarVisible
+        public bool IsCalendarVisible
         {
             get
             {
-                return this.isCalendarVisible;
+                return isCalendarVisible;
             }
         }
     }

@@ -12,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Date of Birth:<uc1:CalendarUserControl runat="server" ID="CalendarUserControl" />
+            Date of Birth:<uc1:CalendarUserControl runat="server" ID="CalendarUserControl" OnCalendarVisibilityChanged="CalendarUserControl_CalendarVisibilityChanged" />
             <br />
             <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
         </div>
