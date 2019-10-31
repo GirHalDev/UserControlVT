@@ -43,10 +43,18 @@ namespace UserControlsVTP104
 
         //Protected means this method is only available for the CalendarUserControl class and its derivatives
         //virtual means the method implementation can be overriden by those derived classes
+        //CustomEvents and Delegate: Step 5- Raise the event, whenever a date is selected
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
             txtDate.Text = Calendar1.SelectedDate.ToShortDateString();
+
+            //Step 5: Raiseing the event 
+            DateSelectedEventArgs dateSelectedEventData = new DateSelectedEventArgs(Calendar1.SelectedDate);
+            OnDateSelected(dateSelectedEventData);
+
             Calendar1.Visible = false;
+
+            //Step 5- raising the event
             CalendarVisibilityChangedEventArgs visibilityChangedEventData = new CalendarVisibilityChangedEventArgs(false);
             OnCalendarVisibilityChanged(visibilityChangedEventData);
         }
@@ -74,11 +82,26 @@ namespace UserControlsVTP104
             }
 
         }
+
+        //CustomEvents and Delegates: 
+        //Step 4: Create a protected virtual method "OnDateSelection" to raise the event
+        public virtual void OnDateSelected(DateSelectedEventArgs e)
+        {
+            if(DateSelected != null)
+            {
+                DateSelected(this, e);
+            }
+        }
+
         //Raising Custom Event: Step3-Registered event and created with the name CalendarVisibilityChanged 
         public event CalendarVisibilityChangedEventHandler CalendarVisibilityChanged;
 
+        //CustomEvents and Delegates: Step3: Creating Event using the EventHandler delegate
+        //Event should be a part of the UserControl Class
+        public event DateSelectedEventHandler DateSelected;
 
-        //The advantage of using protected virtual method 
+
+        //The advantage of using protected virtual method Example
         public class SpecialCalendarControler : CalendarUserControl
         {
             protected override void OnCalendarVisibilityChanged(CalendarVisibilityChangedEventArgs e)
@@ -88,5 +111,7 @@ namespace UserControlsVTP104
                 base.OnCalendarVisibilityChanged(e);
             }
         }
+
+        
     }
 }

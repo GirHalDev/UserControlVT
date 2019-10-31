@@ -5,7 +5,7 @@ using System.Web;
 
 namespace UserControlsVTP104
 {
-    //Raising Custom Events: Step1- Creating the class
+    //Raising Custom Events: Step1- Creating the class that would contain the data
     public class CalendarVisibilityChangedEventArgs : EventArgs
     {
         //CalenderVisibilityChangedEventArgs is a class that contains the event data

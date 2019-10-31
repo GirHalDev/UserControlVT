@@ -11,10 +11,16 @@ namespace UserControlsVTP104
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CalendarUserControl.DateSelected += CalendarUserControl_DateSelected;
             if(!IsPostBack)
             {
                 Calendar1.Visible = false;
             }
+        }
+
+        protected void CalendarUserControl_DateSelected(object sender, DateSelectedEventArgs e)
+        {
+            Response.Write("Selected date: " + e.SelectedDates.ToShortDateString());
         }
 
         protected void imgBtn_Click(object sender, ImageClickEventArgs e)
